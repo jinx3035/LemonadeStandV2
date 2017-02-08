@@ -10,6 +10,11 @@ namespace LemonadeStandV2
     {
         private decimal walletBalance = 20.00m;
 
+        public Wallet()
+        {
+
+        }
+
         public decimal WalletBalance
         {
             get
@@ -22,10 +27,7 @@ namespace LemonadeStandV2
             }
         }
 
-        public Wallet()
-        {
-
-        }
+ 
         
 
         public void ShowWalletBalance()

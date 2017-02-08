@@ -10,12 +10,18 @@ namespace LemonadeStandV2
     {
         public Player player;
 
+        public Game()
+        {
+           
+        }
+
         public void StartGame()
         {
             ShowGameMenu();
             player = new Player();
             player.SetPlayerName();
             player.GreetPlayer();
+
             for (int i = 0; i < 7; i++)
             {
                 BuyOrPlay();
@@ -29,7 +35,7 @@ namespace LemonadeStandV2
             {
                 case "1":
                     Store goShopping = new Store();
-                    goShopping.BuyItems();
+                    goShopping.BuyItems(player);
                     BuyOrPlay();
 
                     break;

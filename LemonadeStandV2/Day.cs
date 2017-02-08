@@ -8,13 +8,19 @@ namespace LemonadeStandV2
 {
     class Day
     {
-        
+        public Weather temperature;
+        public Weather percipitation;
+
+        public Day()
+            {
+            temperature = new Weather();
+            percipitation = new Weather();
+            }
+
         public void CreateDay()
         {
             Weather weather = new Weather();
-            weather.CreateWeather();
-            weather.ChanceOfRain();
-            weather.DisplayForcast(temperature, percipitation);
+            weather.DisplayWeather();
             //Customer population = new Customer();
             //population.CustomerPopulation();
             //population.CustomerType();

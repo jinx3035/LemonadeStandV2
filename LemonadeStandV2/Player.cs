@@ -10,13 +10,13 @@ namespace LemonadeStandV2
     {
         public string name;
         public string choice;
-
+        public Inventory ingredient;
         public Wallet money;
 
         public Player()
         {
             money = new Wallet();
-            // ingredient = new Inventory();
+            ingredient = new Inventory();
         }
 
         public string SetPlayerName()

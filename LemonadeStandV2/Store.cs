@@ -9,7 +9,12 @@ namespace LemonadeStandV2
     class Store
     {
 
-        public void BuyItems()
+        public Store()
+        {
+
+        }
+        
+        public void BuyItems(Player player)
         {
             int buy = int.Parse(BuyItemMenu(player));
             switch (buy)
