@@ -11,16 +11,30 @@ namespace LemonadeStandV2
         public int percipitation;
         public int temperature;
 
-        public Weather()
-        {
+        //public Weather()
+        //{
 
-        }
+        //}
 
         public void DisplayWeather()
         {
             GetTemperature();
             GetChanceOfRain();
             DisplayForcast();
+        }
+
+        public int GetChanceOfRain()
+        {
+            Random rand = new Random();
+            this.percipitation = rand.Next(0, 80);
+            return percipitation;
+        }
+
+        public int GetTemperature()
+        {
+            Random rand = new Random();
+            temperature = rand.Next(15, 105);
+            return temperature;
         }
 
         public void DisplayForcast()
@@ -34,19 +48,6 @@ namespace LemonadeStandV2
             Console.ReadLine();
         }
 
-        public int GetChanceOfRain()
-        {
-            Random rand = new Random();
-            this.percipitation = rand.Next(0, 80);            
-            return percipitation;
-        }
-
-        public int GetTemperature()
-        {
-            Random rand = new Random();
-            temperature = rand.Next(15, 105);
-            return temperature;
-        }
 
 
     }

@@ -53,6 +53,7 @@ namespace LemonadeStandV2
             Console.WriteLine("2: lemons");
             Console.WriteLine("3: sugar cubes");
             Console.WriteLine("4: ice cubes");
+            Console.WriteLine("");
             string menu = Console.ReadLine();
             return menu;
         }
