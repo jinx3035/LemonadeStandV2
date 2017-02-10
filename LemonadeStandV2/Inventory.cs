@@ -23,5 +23,32 @@ namespace LemonadeStandV2
                 cups.Add(cup);
             }
         }
+
+        public void AddLemon(decimal buyLemon)
+        {
+            for (int i = 0; i < buyLemon; i++)
+            {
+                Lemon lemon = new Lemon();
+                lemons.Add(lemon);
+            }
+        }
+
+        public void AddSugarCube(decimal buySugarCube)
+        {
+            for (int i = 0; i < buySugarCube; i++)
+            {
+                SugarCube sugarCube = new SugarCube();
+                sugarCubes.Add(sugarCube);
+            }
+        }
+
+        public void AddIceCube(decimal buyIceCube)
+        {
+            for (int i = 0; i < buyIceCube; i++)
+            {
+                IceCube iceCube = new IceCube();
+                iceCubes.Add(iceCube);
+            }
+        }
     }
 }

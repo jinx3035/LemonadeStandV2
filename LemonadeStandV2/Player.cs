@@ -29,9 +29,12 @@ namespace LemonadeStandV2
 
         public void GreetPlayer()
         {
-            Console.WriteLine("");
+            //Console.Clear();
+            Console.WriteLine("\n");
             Console.WriteLine("Hello " + name + " and good luck running your Lemonade Stand.");
-            Console.WriteLine("Remember to keep in mind that the weather affects customer turn out so make sure not to order too much.");
+            Console.WriteLine("Remember to keep in mind that the weather affects customer turn out.");
+            Console.WriteLine("If it's a pleasant day there will be many customers out to buy your product.\n");
+            Console.WriteLine("");
             Console.WriteLine("");
             name = Console.ReadLine();
         }

@@ -73,10 +73,10 @@ namespace LemonadeStandV2
             Console.WriteLine("So adjust your price accordingly and pay attention to your inventory as some of it may have experation dates. \n");
         }
 
-        private void ReturnGameMenu()
-        {
-            //structure menu to account for returning from the store.
-        }
+        //private void ReturnGameMenu()
+        //{
+        //    //structure menu to account for returning from the store.
+        //}
           
     }
 }
