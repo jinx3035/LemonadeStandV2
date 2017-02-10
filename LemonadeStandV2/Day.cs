@@ -48,27 +48,16 @@ namespace LemonadeStandV2
         {
             Random rand = new Random();
             decimal temp = 0;
-            if (temp >= 30 && temp <= 70)
-            {
-                numberOfCustomers = rand.Next(126, 200);
-            }
-            else if (temp > 70 && temp < 90)
-            {
-                numberOfCustomers = rand.Next(201, 300);
-            }
-            else
-            {
-                numberOfCustomers = rand.Next(50, 125);
-            }
+            if (temp >= 30 && temp <= 70) { numberOfCustomers = rand.Next(126, 200); }
+            else if (temp > 70 && temp < 90) { numberOfCustomers = rand.Next(201, 300); }
+            else { numberOfCustomers = rand.Next(50, 125); }
             return numberOfCustomers;
         }
 
         public void BuyProbability()
         {
-            if (numberOfCustomers >= 126 && numberOfCustomers <= 200)
-            {
-                CustomerType();
-            }
+            // Need different customer types
+            if (numberOfCustomers >= 126 && numberOfCustomers <= 200) { CustomerType(); }
             else if (numberOfCustomers >= 201 && numberOfCustomers <= 300)
             {
                 CustomerType();
@@ -76,8 +65,7 @@ namespace LemonadeStandV2
             else
             {
                 CustomerType();
-            }
-          
+            }         
         }
 
         public void CustomerType()

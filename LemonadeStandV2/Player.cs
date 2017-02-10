@@ -45,16 +45,9 @@ namespace LemonadeStandV2
         public string AskDecision()
         {
             AskDecisionMenu();
-            if (!(choice == "1" || choice == "2" || choice == "3" || choice == "4"))
-            {
-                return FailedAskDecisionResponse();
-            }
-            else
-            {
-                return choice;
-            }
+            if (!(choice == "1" || choice == "2" || choice == "3" || choice == "4")) { throw new KeyNotFoundException(); }
+            else { return choice; }
         }
-
         internal string AskDecisionMenu()
         {
             Console.Clear();

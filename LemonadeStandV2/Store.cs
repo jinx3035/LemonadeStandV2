@@ -8,17 +8,16 @@ namespace LemonadeStandV2
 {
     class Store
     {
+        string choice;
         decimal cupPrice = .10m;
         decimal lemonPrice = .15m;
         decimal sugarCubePrice = .10m;
         decimal iceCubePrice = .05m;
-        string  choice;
         decimal buyCupCost;
         decimal buyLemonCost;
         decimal buySugarCubeCost;
         decimal buyIceCubeCost;
-
-
+        int buy;
         //public Store()
         //{
 
@@ -26,7 +25,12 @@ namespace LemonadeStandV2
         
         public void BuyItems(Player player)
         {
-            int buy = int.Parse(BuyItemMenu(player));
+            try { buy = int.Parse(BuyItemMenu(player)); }
+            catch
+            {
+                Console.WriteLine("Please choose 1, 2, 3 or 4");
+                BuyItemMenu(player);
+            }
             switch (buy)
             {
                 case 1:
@@ -48,10 +52,7 @@ namespace LemonadeStandV2
                         Console.WriteLine("");
                         Console.WriteLine("Would like to purchase anything else ");
                         BuyMoreMenu();
-                        try
-                        {
-                            BuyMoreChoice(player);
-                        }
+                        try { BuyMoreChoice(player); }
                         catch
                         {
                             Console.WriteLine("Please pick a valid number.");
@@ -85,10 +86,7 @@ namespace LemonadeStandV2
                         Console.WriteLine("");
                         Console.WriteLine("Would like to purchase anything else ");
                         BuyMoreMenu();
-                        try
-                        {
-                            BuyMoreChoice(player);
-                        }
+                        try { BuyMoreChoice(player); }
                         catch
                         {
                             Console.WriteLine("Please pick a valid number.");
@@ -122,10 +120,7 @@ namespace LemonadeStandV2
                         Console.WriteLine("");
                         Console.WriteLine("Would like to purchase anything else ");
                         BuyMoreMenu();
-                        try
-                        {
-                            BuyMoreChoice(player);
-                        }
+                        try { BuyMoreChoice(player); }
                         catch
                         {
                             Console.WriteLine("Please pick a valid number.");
@@ -148,7 +143,7 @@ namespace LemonadeStandV2
                     decimal buyIceCubes = Convert.ToDecimal(Console.ReadLine());
                     player.ingredient.AddCup(buyIceCubes);
                     decimal iceCubeCost = Decimal.Multiply(buyIceCubes, iceCubePrice);
-                    buyIceCubeCost = iceCubeCost;                    
+                    buyIceCubeCost = iceCubeCost;
                     if (player.money.CheckBalance(iceCubeCost) == true)
                     {
                         ShowBuyIceCubeCost(player);
@@ -159,23 +154,20 @@ namespace LemonadeStandV2
                         Console.WriteLine("");
                         Console.WriteLine("Would like to purchase anything else ");
                         BuyMoreMenu();
-                        try
-                        {
-                            BuyMoreChoice(player);
-                        }
+                        try { BuyMoreChoice(player); }
                         catch
                         {
                             Console.WriteLine("Please pick a valid number.");
                             BuyMoreChoice(player);
                         }
                         string buyMore = Console.ReadLine();
-                        }
-                        else
-                        {
-                            InsufficientFunds("iceCubes", player);
-                            BuyItems(player);
-                        }
-                        Console.WriteLine("");
+                    }
+                    else
+                    {
+                        InsufficientFunds("iceCubes", player);
+                        BuyItems(player);
+                    }
+                    Console.WriteLine("");
                     break;
                 case 5:
                     Console.WriteLine(" I said go to work!");
@@ -220,8 +212,7 @@ namespace LemonadeStandV2
             choice = Console.ReadLine();           
             if (!(choice == "1" || choice == "2" || choice == "3" || choice == "4" || choice == "5"))
             {
-                Console.WriteLine("You entered an invalid comand.\n\t Please type a number between 1 and 5.");
-                return BuyItemMenu(player);
+                throw new KeyNotFoundException();
             }
             else
             {
@@ -239,15 +230,6 @@ namespace LemonadeStandV2
             Console.WriteLine("\t5: Go to work");
             Console.WriteLine("");
             choice = Console.ReadLine();
-            if (!(choice == "1" || choice == "2" || choice == "3" || choice == "4" || choice == "5"))
-            {
-                Console.WriteLine("You entered an invalid comand.\n\t Please type a number between 1 and 5.");
-                BuyMoreMenu();
-            }
-            else
-            {
-                 this.choice = Console.ReadLine();
-            }
         }
 
         public void ShowBuyCupCost(Player player)

@@ -10,10 +10,11 @@ namespace LemonadeStandV2
     {
         public Player player;
         public Day day;
+        private string decision;
 
         //public Game()
         //{
-           
+
         //}
 
         public void StartGame()
@@ -23,15 +24,17 @@ namespace LemonadeStandV2
             player.GreetPlayer();
             day = new Day();
             day.CreateDay();
-            for (int i = 0; i < 7; i++)
-            {
-                BuyOrPlay();
-            }
+            for (int i = 0; i < 7; i++) { BuyOrPlay(); }
         }
 
         public void BuyOrPlay()
         {
-            string decision = player.AskDecision();
+            try { decision = player.AskDecision(); }
+            catch
+            {
+                Console.WriteLine("Please choose 1, 2, 3 or 4");
+                player.AskDecision();
+            }
             switch (decision)
             {
                 case "1":
