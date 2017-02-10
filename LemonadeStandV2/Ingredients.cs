@@ -8,9 +8,13 @@ namespace LemonadeStandV2
 {
     class Ingredients
     {
-        //public virtual void IngredientName()
+        //public virtual decimal IngredientPrice()
         //{
-        //    Console.WriteLine("cup");
+        //    Console.WriteLine("");
         //}
+        public Ingredients()
+        {
+
+        }
     }
 }

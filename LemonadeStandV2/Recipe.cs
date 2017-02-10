@@ -8,14 +8,17 @@ namespace LemonadeStandV2
 {
     class Recipe
     {
-    //    private void RecipeMenu()
-    //    {
-    //        Console.Clear();
-    //        Console.WriteLine("");
-    //        Console.WriteLine("Ok "+name+" it's time to set the recipe for your lemonade.");
-    //        Console.WriteLine("-------------------------------------------------------------\n");
-    //        Console.WriteLine("");
+        //Player player;
 
-    //    }
+        public void RecipeMenu(Player player)
+        {
+            Console.Clear();
+            Console.WriteLine("");
+            Console.WriteLine("Ok {0} it's time to set the recipe for your lemonade.", player.name);
+            Console.WriteLine("----------------------------------------------------------\n");
+            Console.WriteLine("");
+            Console.ReadLine();
+
+        }
     }
 }

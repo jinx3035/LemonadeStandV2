@@ -12,17 +12,17 @@ namespace LemonadeStandV2
         decimal lemonPrice = .15m;
         decimal sugarCubePrice = .10m;
         decimal iceCubePrice = .05m;
-        string choice;
+        string  choice;
         decimal buyCupCost;
         decimal buyLemonCost;
         decimal buySugarCubeCost;
         decimal buyIceCubeCost;
 
 
-        public Store()
-        {
+        //public Store()
+        //{
 
-        }
+        //}
         
         public void BuyItems(Player player)
         {
@@ -40,7 +40,7 @@ namespace LemonadeStandV2
                     buyCupCost = cupCost;
                     if (player.money.CheckBalance(cupCost) == true)
                     {
-                        ShowPurchasCost(player);
+                        ShowBuyCupCost(player);
                         player.money.WalletBalance = Math.Round((player.money.WalletBalance - (cupCost)), 2);
                         Console.WriteLine("");
                         Console.WriteLine("You just purchased {0} cups and have {1} in your inventory.", buyCups, player.ingredient.cups.Count);
@@ -48,7 +48,15 @@ namespace LemonadeStandV2
                         Console.WriteLine("");
                         Console.WriteLine("Would like to purchase anything else ");
                         BuyMoreMenu();
-                        BuyMoreChoice(player);
+                        try
+                        {
+                            BuyMoreChoice(player);
+                        }
+                        catch
+                        {
+                            Console.WriteLine("Please pick a valid number.");
+                            BuyMoreChoice(player);
+                        }
                         string buyMore = Console.ReadLine();
                     }
                     else
@@ -69,7 +77,7 @@ namespace LemonadeStandV2
                     buyLemonCost = lemonCost;
                     if (player.money.CheckBalance(lemonCost) == true)
                     {
-                        ShowPurchasCost(player);
+                        ShowBuyLemonCost(player);
                         player.money.WalletBalance = Math.Round((player.money.WalletBalance - (lemonCost)), 2);
                         Console.WriteLine("");
                         Console.WriteLine("You just purchased {0} cups and have {1} in your inventory.", buyLemons, player.ingredient.lemons.Count);
@@ -77,7 +85,15 @@ namespace LemonadeStandV2
                         Console.WriteLine("");
                         Console.WriteLine("Would like to purchase anything else ");
                         BuyMoreMenu();
-                        BuyMoreChoice(player);
+                        try
+                        {
+                            BuyMoreChoice(player);
+                        }
+                        catch
+                        {
+                            Console.WriteLine("Please pick a valid number.");
+                            BuyMoreChoice(player);
+                        }
                         string buyMore = Console.ReadLine();
                     }
                     else
@@ -98,7 +114,7 @@ namespace LemonadeStandV2
                     buySugarCubeCost = sugarCubeCost;
                     if (player.money.CheckBalance(sugarCubeCost) == true)
                     {
-                        ShowPurchasCost(player);
+                        ShowBuySugarCubeCost(player);
                         player.money.WalletBalance = Math.Round((player.money.WalletBalance - (sugarCubeCost)), 2);
                         Console.WriteLine("");
                         Console.WriteLine("You just purchased {0} cups and have {1} in your inventory.", buySugarCubes, player.ingredient.sugarCubes.Count);
@@ -106,7 +122,15 @@ namespace LemonadeStandV2
                         Console.WriteLine("");
                         Console.WriteLine("Would like to purchase anything else ");
                         BuyMoreMenu();
-                        BuyMoreChoice(player);
+                        try
+                        {
+                            BuyMoreChoice(player);
+                        }
+                        catch
+                        {
+                            Console.WriteLine("Please pick a valid number.");
+                            BuyMoreChoice(player);
+                        }
                         string buyMore = Console.ReadLine();
                     }
                     else
@@ -127,7 +151,7 @@ namespace LemonadeStandV2
                     buyIceCubeCost = iceCubeCost;                    
                     if (player.money.CheckBalance(iceCubeCost) == true)
                     {
-                        ShowPurchasCost(player);
+                        ShowBuyIceCubeCost(player);
                         player.money.WalletBalance = Math.Round((player.money.WalletBalance - (iceCubeCost)), 2);
                         Console.WriteLine("");
                         Console.WriteLine("You just purchased {0} cups and have {1} in your inventory.", buyIceCubes, player.ingredient.iceCubes.Count);
@@ -135,7 +159,15 @@ namespace LemonadeStandV2
                         Console.WriteLine("");
                         Console.WriteLine("Would like to purchase anything else ");
                         BuyMoreMenu();
-                        BuyMoreChoice(player);
+                        try
+                        {
+                            BuyMoreChoice(player);
+                        }
+                        catch
+                        {
+                            Console.WriteLine("Please pick a valid number.");
+                            BuyMoreChoice(player);
+                        }
                         string buyMore = Console.ReadLine();
                         }
                         else
@@ -156,15 +188,8 @@ namespace LemonadeStandV2
 
         private void BuyMoreChoice(Player player)
         {
-            if (!(choice == "1" || choice == "2" || choice == "3" || choice == "4" || choice == "5"))
-            {
-                Console.WriteLine("An invalid choice was entered. You will now be returned to the main store.");
-                 BuyItems(player);               
-            }
-            else
-            {
-                Console.ReadLine();
-            }         
+            if (!(choice == "1" || choice == "2" || choice == "3" || choice == "4" || choice == "5")) {throw new KeyNotFoundException();}
+            else { Console.ReadLine();}         
         }
 
         private void InsufficientFunds(string item, Player player)
@@ -225,7 +250,7 @@ namespace LemonadeStandV2
             }
         }
 
-        public void ShowPurchasCost(Player player)
+        public void ShowBuyCupCost(Player player)
         {
             Console.WriteLine("This will cost you ${0} out of the ${1} in your wallet.", buyCupCost, player.money.WalletBalance);
             Console.WriteLine("Do you wish to complete this purchase?\n\t y or n");
@@ -233,12 +258,58 @@ namespace LemonadeStandV2
             if (!(choice == "y" || choice == "n"))
                 {
                 Console.WriteLine("You entered an invalid comand.\n\t Please type y or n.");
-                ShowPurchasCost(player);
+                ShowBuyCupCost(player);
                 }
             else
             {
                 this.choice = Console.ReadLine();
             }
         }
+        public void ShowBuyLemonCost(Player player)
+        {
+            Console.WriteLine("This will cost you ${0} out of the ${1} in your wallet.", buyLemonCost, player.money.WalletBalance);
+            Console.WriteLine("Do you wish to complete this purchase?\n\t y or n");
+            choice = Console.ReadLine();
+            if (!(choice == "y" || choice == "n"))
+                {
+                Console.WriteLine("You entered an invalid comand.\n\t Please type y or n.");
+                ShowBuyLemonCost(player);
+                }
+            else
+            {
+                this.choice = Console.ReadLine();
+            }
+        }
+        public void ShowBuySugarCubeCost(Player player)
+        {
+            Console.WriteLine("This will cost you ${0} out of the ${1} in your wallet.", buySugarCubeCost, player.money.WalletBalance);
+            Console.WriteLine("Do you wish to complete this purchase?\n\t y or n");
+            choice = Console.ReadLine();
+            if (!(choice == "y" || choice == "n"))
+            {
+                Console.WriteLine("You entered an invalid comand.\n\t Please type y or n.");
+                ShowBuySugarCubeCost(player);
+            }
+            else
+            {
+                this.choice = Console.ReadLine();
+            }
+        }
+        public void ShowBuyIceCubeCost(Player player)
+        {
+            Console.WriteLine("This will cost you ${0} out of the ${1} in your wallet.", buyIceCubeCost, player.money.WalletBalance);
+            Console.WriteLine("Do you wish to complete this purchase?\n\t y or n");
+            choice = Console.ReadLine();
+            if (!(choice == "y" || choice == "n"))
+            {
+                Console.WriteLine("You entered an invalid comand.\n\t Please type y or n.");
+                ShowBuyIceCubeCost(player);
+            }
+            else
+            {
+                this.choice = Console.ReadLine();
+            }
+        }
+
     }
 }

@@ -8,13 +8,10 @@ namespace LemonadeStandV2
 {
     class Cup: Ingredients
     {
-        private decimal cupPrice = 20m;
-        public decimal CupPrice
-        {
-            get
-            {
-                return cupPrice;
-            }
-        }
+        //private decimal cupPrice = 20m;
+        //public override decimal IngredientPrice()
+        //{
+        
+        //}
     }
 }

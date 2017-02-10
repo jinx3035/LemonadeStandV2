@@ -20,11 +20,9 @@ namespace LemonadeStandV2
         {
             ShowGameMenu();
             player = new Player();
-            player.SetPlayerName();
             player.GreetPlayer();
             day = new Day();
             day.CreateDay();
-
             for (int i = 0; i < 7; i++)
             {
                 BuyOrPlay();
@@ -43,8 +41,9 @@ namespace LemonadeStandV2
 
                     break;
                 case "2":
-                    Console.WriteLine("set lemonade price and recipe");
-                    Console.ReadLine();
+                    player.recipe.RecipeMenu(player);
+                    //Console.WriteLine("set lemonade price and recipe");
+                    //Console.ReadLine();
 
                     break;
                 case "3":

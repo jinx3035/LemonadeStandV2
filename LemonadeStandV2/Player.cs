@@ -12,11 +12,14 @@ namespace LemonadeStandV2
         public string choice;
         public Inventory ingredient;
         public Wallet money;
+        public Recipe recipe;
 
         public Player()
         {
+            name = SetPlayerName();
             money = new Wallet();
             ingredient = new Inventory();
+            recipe = new Recipe();
         }
 
         public string SetPlayerName()
