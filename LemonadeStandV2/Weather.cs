@@ -26,7 +26,7 @@ namespace LemonadeStandV2
         public int GetChanceOfRain()
         {
             Random rand = new Random();
-            this.percipitation = rand.Next(0, 80);
+            percipitation = rand.Next(0, 80);
             return percipitation;
         }
 
@@ -41,8 +41,8 @@ namespace LemonadeStandV2
         {
             Console.Clear();
             GetChanceOfRain();
-            Console.WriteLine("Today's forecast is a high of " + temperature + " degrees outside " + percipitation);
-            Console.WriteLine("");
+            Console.WriteLine("Today's forecast is a high of " + temperature + " degrees outside ");
+            Console.WriteLine("With a " + percipitation + "% chance of rain.\n");
             Console.WriteLine("Pay attention to the weather because it will directly affect how many customers come out to buy your product.");
             Console.WriteLine("So adjust your price accordingly and pay attention to your inventory as some of it may have experation dates. \n");
             Console.ReadLine();

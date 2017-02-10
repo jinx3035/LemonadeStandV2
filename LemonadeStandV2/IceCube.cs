@@ -8,9 +8,13 @@ namespace LemonadeStandV2
 {
     class IceCube: Ingredients
     {
-        public override void IngredientName()
+        private decimal iceCubePrice = 20m;
+        public decimal IceCubePrice
         {
-            Console.WriteLine("cup");
+            get
+            {
+                return iceCubePrice;
+            }
         }
     }
 }

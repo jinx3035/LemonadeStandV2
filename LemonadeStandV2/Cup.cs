@@ -8,9 +8,13 @@ namespace LemonadeStandV2
 {
     class Cup: Ingredients
     {
-        public override void IngredientName()
+        private decimal cupPrice = 20m;
+        public decimal CupPrice
         {
-            Console.WriteLine("cup");
+            get
+            {
+                return cupPrice;
+            }
         }
     }
 }

@@ -9,11 +9,12 @@ namespace LemonadeStandV2
     class Game
     {
         public Player player;
+        public Day day;
 
-        public Game()
-        {
+        //public Game()
+        //{
            
-        }
+        //}
 
         public void StartGame()
         {
@@ -21,6 +22,8 @@ namespace LemonadeStandV2
             player = new Player();
             player.SetPlayerName();
             player.GreetPlayer();
+            day = new Day();
+            day.CreateDay();
 
             for (int i = 0; i < 7; i++)
             {
@@ -40,7 +43,7 @@ namespace LemonadeStandV2
 
                     break;
                 case "2":
-                    Console.WriteLine("set lemonade price");
+                    Console.WriteLine("set lemonade price and recipe");
                     Console.ReadLine();
 
                     break;
@@ -59,6 +62,7 @@ namespace LemonadeStandV2
 
         public void ShowGameMenu()
         {
+            Console.Clear();
             Console.WriteLine("");
             Console.WriteLine("Congratulations on choosing a lemonade stand to gain your riches. ");
             Console.WriteLine("Pay attention now. There are decisions to be made that will decide your success or failure.\n");
@@ -68,5 +72,11 @@ namespace LemonadeStandV2
             Console.WriteLine("Pay attention to the weather because it will directly affect how many customers come out to buy your product.");
             Console.WriteLine("So adjust your price accordingly and pay attention to your inventory as some of it may have experation dates. \n");
         }
+
+        private void ReturnGameMenu()
+        {
+            //structure menu to account for returning from the store.
+        }
+          
     }
 }

@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace LemonadeStandV2
 {
-    class Lemon: Ingredients
+    class Lemon : Ingredients
     {
-        public override void IngredientName()
+        private decimal lemonPrice = 15m;
+        public decimal LemonPrice
         {
-            Console.WriteLine("cup");
+            get
+            {
+                return lemonPrice;
+            }
         }
     }
 }

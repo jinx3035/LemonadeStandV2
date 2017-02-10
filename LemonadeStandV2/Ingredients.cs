@@ -8,9 +8,9 @@ namespace LemonadeStandV2
 {
     class Ingredients
     {
-        public virtual void IngredientName()
-        {
-            Console.WriteLine("cup");
-        }
+        //public virtual void IngredientName()
+        //{
+        //    Console.WriteLine("cup");
+        //}
     }
 }

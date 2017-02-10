@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace LemonadeStandV2
 {
-    class SugarCube: Ingredients
+    class SugarCube : Ingredients
     {
-        public override void IngredientName()
+        private decimal sugarCubePrice = 20m;
+        public decimal SugarCubePrice
         {
-            Console.WriteLine("cup");
+            get
+            {
+                return sugarCubePrice;
+            }
         }
     }
 }
