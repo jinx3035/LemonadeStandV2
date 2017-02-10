@@ -14,11 +14,10 @@ namespace LemonadeStandV2
         {
             Console.Clear();
             Console.WriteLine("");
-            Console.WriteLine("Ok {0} it's time to set the recipe for your lemonade.", player.name);
+            Console.WriteLine("Ok {0} it's time to set the recipe for your lemonade.", player.Name);
             Console.WriteLine("----------------------------------------------------------\n");
             Console.WriteLine("");
             Console.ReadLine();
-
         }
     }
 }

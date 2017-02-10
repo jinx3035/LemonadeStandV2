@@ -8,8 +8,8 @@ namespace LemonadeStandV2
 {
     class Weather
     {
-        public int percipitation;
-        public int temperature;
+        private int percipitation;
+        private int temperature;
 
         //public Weather()
         //{
@@ -47,8 +47,5 @@ namespace LemonadeStandV2
             Console.WriteLine("So adjust your price accordingly and pay attention to your inventory as some of it may have experation dates. \n");
             Console.ReadLine();
         }
-
-
-
     }
 }

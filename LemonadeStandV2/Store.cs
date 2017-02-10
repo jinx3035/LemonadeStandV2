@@ -22,6 +22,11 @@ namespace LemonadeStandV2
         //{
 
         //}
+        private void InsufficientFunds(string item, Player player)
+        {
+            Console.WriteLine("Sorry, you do not have enough money to buy that many " + item);
+            Console.ReadKey();           
+        }
         
         public void BuyItems(Player player)
         {
@@ -177,19 +182,6 @@ namespace LemonadeStandV2
                     break;
             }
         }
-
-        private void BuyMoreChoice(Player player)
-        {
-            if (!(choice == "1" || choice == "2" || choice == "3" || choice == "4" || choice == "5")) {throw new KeyNotFoundException();}
-            else { Console.ReadLine();}         
-        }
-
-        private void InsufficientFunds(string item, Player player)
-        {
-            Console.WriteLine("Sorry, you do not have enough money to buy that many " + item);
-            Console.ReadKey();           
-        }
-
         private string BuyItemMenu(Player player)
         {
             Console.Clear();
@@ -220,6 +212,11 @@ namespace LemonadeStandV2
             }
         }
 
+        private void BuyMoreChoice(Player player)
+        {
+            if (!(choice == "1" || choice == "2" || choice == "3" || choice == "4" || choice == "5")) {throw new KeyNotFoundException();}
+            else { Console.ReadLine();}         
+        }
         private void BuyMoreMenu()
         {
             Console.WriteLine("");
@@ -232,7 +229,7 @@ namespace LemonadeStandV2
             choice = Console.ReadLine();
         }
 
-        public void ShowBuyCupCost(Player player)
+        private void ShowBuyCupCost(Player player)
         {
             Console.WriteLine("This will cost you ${0} out of the ${1} in your wallet.", buyCupCost, player.money.WalletBalance);
             Console.WriteLine("Do you wish to complete this purchase?\n\t y or n");
@@ -247,7 +244,7 @@ namespace LemonadeStandV2
                 this.choice = Console.ReadLine();
             }
         }
-        public void ShowBuyLemonCost(Player player)
+        private void ShowBuyLemonCost(Player player)
         {
             Console.WriteLine("This will cost you ${0} out of the ${1} in your wallet.", buyLemonCost, player.money.WalletBalance);
             Console.WriteLine("Do you wish to complete this purchase?\n\t y or n");
@@ -262,7 +259,7 @@ namespace LemonadeStandV2
                 this.choice = Console.ReadLine();
             }
         }
-        public void ShowBuySugarCubeCost(Player player)
+        private void ShowBuySugarCubeCost(Player player)
         {
             Console.WriteLine("This will cost you ${0} out of the ${1} in your wallet.", buySugarCubeCost, player.money.WalletBalance);
             Console.WriteLine("Do you wish to complete this purchase?\n\t y or n");
@@ -277,7 +274,7 @@ namespace LemonadeStandV2
                 this.choice = Console.ReadLine();
             }
         }
-        public void ShowBuyIceCubeCost(Player player)
+        private void ShowBuyIceCubeCost(Player player)
         {
             Console.WriteLine("This will cost you ${0} out of the ${1} in your wallet.", buyIceCubeCost, player.money.WalletBalance);
             Console.WriteLine("Do you wish to complete this purchase?\n\t y or n");

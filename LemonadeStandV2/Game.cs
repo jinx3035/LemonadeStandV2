@@ -33,7 +33,7 @@ namespace LemonadeStandV2
             catch
             {
                 Console.WriteLine("Please choose 1, 2, 3 or 4");
-                player.AskDecision();
+                player.FailedAskDecisionResponse();
             }
             switch (decision)
             {

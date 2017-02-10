@@ -11,31 +11,16 @@ namespace LemonadeStandV2
         private decimal walletBalance = 20.00m;
         public decimal WalletBalance
         {
-            get
-            {
-                return walletBalance;
-            }
-            set
-            {
-                walletBalance = value;
-            }
+            get { return walletBalance; }
+            set { walletBalance = value; }
         }
     
-        public void ShowWalletBalance()
-        {
-            Console.WriteLine(walletBalance);
-        }
+        public void ShowWalletBalance() { Console.WriteLine(walletBalance); }
 
         public bool CheckBalance(decimal amount)
         {
-            if (amount <= walletBalance)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            if (amount <= walletBalance) { return true; }
+            else { return false; }
         }
     }
 }

@@ -8,8 +8,9 @@ namespace LemonadeStandV2
 {
     class Player
     {
-        public string name;
-        public string choice;
+        private string name;
+        public string Name { get;}
+        string choice;
         public Inventory ingredient;
         public Wallet money;
         public Recipe recipe;
@@ -45,6 +46,12 @@ namespace LemonadeStandV2
         public string AskDecision()
         {
             AskDecisionMenu();
+            if (!(choice == "1" || choice == "2" || choice == "3" || choice == "4")) { throw new KeyNotFoundException(); }
+            else { return choice; }
+        }
+        public string FailedAskDecision()
+        {
+            FailedAskDecisionResponse();
             if (!(choice == "1" || choice == "2" || choice == "3" || choice == "4")) { throw new KeyNotFoundException(); }
             else { return choice; }
         }

@@ -11,9 +11,9 @@ namespace LemonadeStandV2
         public Weather temperature;
         public Weather percipitation;
         public List<Customer> dailyCustomers;
-        public decimal numberOfCustomers;
-        public decimal buyProbability;
-        public int type;
+        decimal numberOfCustomers;
+        decimal buyProbability;
+        int type;
 
 
         public Day()
